@@ -3,6 +3,13 @@
 // Once chosen, send result to console to compare with player's
 // Make win/lose text depending on comparison results
 
+const choices = ["Rock", "Paper", "Scissors"];
+let computerChoice;
+
+function getComputerChoice() {
+    computerChoice = (choices[(Math.floor(Math.random() * choices.length))]);
+}
+
 function playRound(playerChoice, computerChoice) {
             //Player wins
     if ((playerChoice === "Scissors" && computerChoice === "Paper") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Rock" && computerChoice === "Scissors")) {
