@@ -1,41 +1,49 @@
             //Define Player's choice
 
-let playerChoice;
-
 function getPlayerChoice() {
     let userInput = prompt("Welcome to Rock, Paper, Scissors! Please write your choice here:")
-    let userInputClean = userInput.toLowerCase()
-    playerChoice = userInputClean.charAt(0).toUpperCase() + userInputClean.slice(1);
+    let playerChoice = userInput.trim().toLowerCase()
+    return playerChoice;
 }
 
             //Define Computer's choice
 
-const choices = ["Rock", "Paper", "Scissors"];
-let computerChoice;
-
 function getComputerChoice() {
-    computerChoice = (choices[(Math.floor(Math.random() * choices.length))]);
+    const choices = ["rock", "paper", "scissors"];
+    let computerChoice = (choices[(Math.floor(Math.random() * choices.length))]);
+    return computerChoice;
+}
+
+            // Capitalize choices function
+            
+function capitalize(choice) {
+    let ChoiceCapital = choice.charAt(0).toUpperCase() + choice.slice(1);
+    return ChoiceCapital; 
 }
 
             //Define who wins
 
-function playRound(playerChoice, computerChoice) {
-    getPlayerChoice();
-    getComputerChoice();
+function playRound() {
+    let playerChoice = getPlayerChoice();
+    let computerChoice = getComputerChoice();
+
+    let playerChoiceCapital = capitalize(playerChoice);
+    let computerChoiceCapital = capitalize(computerChoice);
+
             //Player wins
-    if ((playerChoice === "Scissors" && computerChoice === "Paper") || (playerChoice === "Paper" && computerChoice === "Rock") || (playerChoice === "Rock" && computerChoice === "Scissors")) {
-        return console.log(`You Win! ${playerChoice} beats ${computerChoice}.`)
+    if ((playerChoice === "scissors" && computerChoice === "paper") || (playerChoice === "paper" && computerChoice === "rock") || (playerChoice === "rock" && computerChoice === "scissors")) {
+        return console.log(`You Win! ${playerChoiceCapital} beats ${computerChoiceCapital}.`)
     } 
             // Player loses
-    else if ((playerChoice === "Scissors" && computerChoice === "Rock") || (playerChoice === "Paper" && computerChoice === "Scissors") || (playerChoice === "Rock" && computerChoice === "Paper")) {
-        return console.log(`You Lose! ${computerChoice} beats ${playerChoice}.`)
+    else if ((playerChoice === "scissors" && computerChoice === "rock") || (playerChoice === "paper" && computerChoice === "scissors") || (playerChoice === "rock" && computerChoice === "paper")) {
+        return console.log(`You Lose! ${computerChoiceCapital} beats ${playerChoiceCapital}.`)
     }
             // Draw
-    else if ((playerChoice === "Scissors" && computerChoice === "Scissors") || (playerChoice === "Paper" && computerChoice === "Paper") || (playerChoice === "Rock" && computerChoice === "Rock")) {
+    else if (playerChoice === computerChoice) {
         return console.log(`It's a Draw!`)
     }
             // Player inputs something that isn't rock, paper or scissors
-    else  if (playerChoice !== "Paper"||"Rock"||"Scissors") {
+    else  if (playerChoice !== "paper"||"rock"||"scissors") {
         return console.log("It seems there was a typo in your input. Please try again.")
     }
 }
