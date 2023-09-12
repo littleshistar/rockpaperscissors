@@ -1,4 +1,3 @@
-//Define Computer's choice
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -6,14 +5,18 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-// Capitalize choice function
             
 function capitalize(choice) {
     let ChoiceCapital = choice.charAt(0).toUpperCase() + choice.slice(1);
     return ChoiceCapital; 
 }
 
-//Define who wins
+function addScorePoint(winner) {
+    const result = document.querySelector(winner);
+    const score = document.querySelector(winner).innerText;
+    let newScore = parseInt(score) + 1;
+    result.textContent=`${newScore}`;
+}
 
 function playRound(playerChoice) {
     let computerChoice = getComputerChoice();
@@ -21,17 +24,35 @@ function playRound(playerChoice) {
     let playerChoiceCapital = capitalize(playerChoice);
     let computerChoiceCapital = capitalize(computerChoice);
 
-    const result = document.querySelector("#result"); 
+    const result = document.querySelector("#result");
 
-            //Player wins
+    //Player wins
     if ((playerChoice === "scissors" && computerChoice === "paper") || (playerChoice === "paper" && computerChoice === "rock") || (playerChoice === "rock" && computerChoice === "scissors")) {
-        result.textContent= `You Win! ${playerChoiceCapital} beats ${computerChoiceCapital}.`;
+        addScorePoint("#playerscore");
+        const playerscore = document.querySelector("#playerscore").innerText;
+
+        if (playerscore >= 5) {
+            result.textContent= 'You win the game! Congratulations! \n Play again?';
+            finishGame();
+        }
+        else {
+            result.textContent= `You Win! ${playerChoiceCapital} beats ${computerChoiceCapital}.`
+        };
     } 
-            // Player loses
+    // Player loses
     else if ((playerChoice === "scissors" && computerChoice === "rock") || (playerChoice === "paper" && computerChoice === "scissors") || (playerChoice === "rock" && computerChoice === "paper")) {
-        result.textContent=`You Lose! ${computerChoiceCapital} beats ${playerChoiceCapital}.`;
+        addScorePoint("#computerscore");
+        const computerscore = document.querySelector("#computerscore").innerText;
+
+        if (computerscore >= 5) {
+            result.textContent= 'The computer wins the game!\n Play again?';
+            finishGame();
+        }
+        else {
+            result.textContent=`You Lose! ${computerChoiceCapital} beats ${playerChoiceCapital}.`;
+        }
     }
-            // Draw
+    // Draw
     else if (playerChoice === computerChoice) {
         result.textContent= `It's a Draw!`;
     }
