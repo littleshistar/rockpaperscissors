@@ -4,8 +4,7 @@ function getComputerChoice() {
     let computerChoice = (choices[(Math.floor(Math.random() * choices.length))]);
     return computerChoice;
 }
-
-            
+        
 function capitalize(choice) {
     let ChoiceCapital = choice.charAt(0).toUpperCase() + choice.slice(1);
     return ChoiceCapital; 
@@ -17,6 +16,35 @@ function addScorePoint(winner) {
     let newScore = parseInt(score) + 1;
     result.textContent=`${newScore}`;
 }
+
+function restartGame() {
+    const scores = document.querySelectorAll("#playerscore, #computerscore");
+    scores.forEach((score) => {
+        score.textContent = "0";
+        });
+
+    const playbtns = document.querySelectorAll("button.play");
+    playbtns.forEach((button) => {
+    button.disabled = false;
+    });
+
+    const restart = document.querySelector("#restart");
+    restart.remove();
+}
+
+function finishGame() {
+    const resultsdiv = document.querySelector("#resultsdiv");
+    const btn = document.createElement("button");
+    btn.setAttribute("id", "restart");
+    btn.textContent = "Restart";
+    resultsdiv.appendChild(btn);
+    btn.addEventListener("click", () => restartGame());
+
+    const playbtns = document.querySelectorAll("button.play");
+    playbtns.forEach((button) => {
+    button.disabled = true;
+    });
+    };
 
 function playRound(playerChoice) {
     let computerChoice = getComputerChoice();
@@ -32,7 +60,7 @@ function playRound(playerChoice) {
         const playerscore = document.querySelector("#playerscore").innerText;
 
         if (playerscore >= 5) {
-            result.textContent= 'You win the game! Congratulations! \n Play again?';
+            result.textContent= "You win the game! Congratulations! \n Play again?";
             finishGame();
         }
         else {
@@ -45,7 +73,7 @@ function playRound(playerChoice) {
         const computerscore = document.querySelector("#computerscore").innerText;
 
         if (computerscore >= 5) {
-            result.textContent= 'The computer wins the game!\n Play again?';
+            result.textContent= "The computer wins the game!\n Play again?";
             finishGame();
         }
         else {
@@ -58,9 +86,9 @@ function playRound(playerChoice) {
     }
 }
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener("click", play = () => {
     let choice = button.id;
     playRound(choice);
   });
