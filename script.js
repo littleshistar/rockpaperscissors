@@ -30,6 +30,9 @@ function restartGame() {
 
     const restart = document.querySelector("#restart");
     restart.remove();
+    
+    const result = document.querySelector("#result");
+    result.textContent= "";
 }
 
 function finishGame() {

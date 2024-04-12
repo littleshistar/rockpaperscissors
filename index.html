@@ -4,31 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <p>Welcome to Rock, Paper, Scissors!</p>
-    <div>
-        <p>Select one of the options to play.</p>
-        <button id="rock" class ="play">Rock</button>
-        <button id="paper" class ="play">Paper</button>
-        <button id="scissors" class ="play">Scissors</button>
-    </div>
-    <div id="resultsdiv">
-        <p id="result"></p>
-    </div>
-    <div>
-        <p>Score</p>
-        <div>
-            <div>
-                <p>You</p>
-                <p id="playerscore">0</p>
+<div id="bigdiv">
+    <div id="menudiv">
+        <p id="welcome">Welcome to Rock, Paper, Scissors!</p>
+        <div id="gamediv">
+            <div id="btndiv">
+                <p class="text">Select one of the options to play.</p>
+                <div id="playbuttons">
+                <button id="rock" class ="play"><img src="img/rock.png" alt="rock"></button></button>
+                <button id="paper" class ="play"><img src="img/paper.png" alt="paper"></button></button>
+                <button id="scissors" class ="play"><img src="img/scissors.png" alt="scissors"></button>
+                </div>
             </div>
-            <div>
-                <p>Computer</p>
-                <p id="computerscore">0</p>
-            </div>
+                    
+            <div id="scorediv">
+                <p class="text">Score</p>
+                <div>
+                    <div id="scoreboard">
+                        <div class="scores">
+                            <p>You</p>
+                            <p id="playerscore">0</p>
+                        </div>
+                        <div class="scores">
+                            <p>Computer</p>
+                            <p id="computerscore">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>   
         </div>
-    </div>
+        <div id="resultsdiv">
+            <p id="result"></p>
+        </div> 
+    </div>    
+</div>
+
+<div id="footer">
+     <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock-paper-scissors icons">Rock-Paper-Scissors Icons Created by Freepik - Flaticon</a><br>
+     <a href="https://www.magicpattern.design/tools/css-backgrounds" title="background pattern">Background Pattern by MagicPattern</a>
+</div>
 </body>
 </html>

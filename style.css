@@ -1,0 +1,130 @@
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    font-family: Noto Sans, sans-serif;
+    background-color: #4a4a52;
+    opacity: 1;
+    background-image: radial-gradient(#6b6b75 1.4000000000000001px, #4a4a52 1.4000000000000001px);
+    background-size: 28px 28px;
+    align-items: center;
+}
+
+#bigdiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menudiv {
+    background-color: #6b6b75;
+    max-width: 550px;
+    border-radius: 20px;
+    padding: 16px;
+    width: 100%;
+}
+
+#welcome {
+    text-align: center;
+    padding-bottom: 16px;
+    margin: 0px;
+    color: #faf756;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#gamediv {
+    display: flex;
+}
+
+#btndiv {
+    background-color: #ffffff;
+    flex-grow: 1;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 16px;
+}
+
+#playbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+img {
+    display: flex;
+    max-height: 100px;
+}
+
+#rock, #paper, #scissors {
+    background-color: transparent;
+    border-style: none;
+}
+
+#rock {
+    filter: invert(16%) sepia(89%) saturate(2470%) hue-rotate(228deg) brightness(109%) contrast(114%);
+}
+
+#paper {
+    filter: invert(99%) sepia(76%) saturate(1758%) hue-rotate(327deg) brightness(115%) contrast(96%);
+}
+
+#scissors {
+    filter: invert(22%) sepia(64%) saturate(7296%) hue-rotate(354deg) brightness(88%) contrast(92%);
+}
+
+#scorediv {
+    background-color: #8a8f9b;
+    flex-grow: 1;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.text {
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 16px;
+    padding: 0px;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+}
+
+.scores {
+    text-align: center;
+}
+
+#resultsdiv {
+    text-align: center;
+}
+
+#restart {
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 2px 20px;
+    border-style: none;
+}
+
+#footer {
+    background-color: #6b6b75;
+    border-style: none;
+    max-width: 550px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: #313136;
+}
